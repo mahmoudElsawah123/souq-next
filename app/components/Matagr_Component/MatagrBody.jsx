@@ -24,6 +24,7 @@ import MatagrProduct from "./MatagrProduct";
 import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { IoLogoWhatsapp, IoMdArrowDropdown } from "react-icons/io";
+
 import {
   FaEnvelope,
   FaMapMarkerAlt,
@@ -302,9 +303,9 @@ console.log(MarketDetialsArr)
                   />
                 </LinkedinShareButton>
 
-                {/* <Link href={`/${params.id[0]}.xml`}>
+                <Link href={`/${params.id[0]}.xml`}>
                           <Image src={rssImage} width={40} height={40} alt="rss"/>
-                   </Link> */}
+                   </Link>
               </div>
               <div className="map_img">
   {(MarketDetialsArr?.lat && MarketDetialsArr?.lng && MarketDetialsArr?.lat !== 0 && MarketDetialsArr?.lng !== 0) && (

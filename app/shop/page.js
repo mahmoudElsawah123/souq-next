@@ -1,11 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import map from "@/public/map.png";
-import img2 from "@/public/images/images.png";
-import face from "@/public/images/face.png";
-import ins from "@/public/images/instegram.png";
-import twiter from "@/public/images/twiter.png";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Row } from "react-bootstrap";
 import { getSearchResult } from "../../store/ShopSlice";

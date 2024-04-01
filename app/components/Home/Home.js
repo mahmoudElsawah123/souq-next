@@ -6,6 +6,7 @@ import HomeHeader from "./HomeHeader/HomeHeader";
 import LazyLoad from "react-lazyload";
 import SlickSections from "./SlickSections/SlickSections";
 import MatgersHome from "./MatgersHome/MatgersHome";
+import LastofOffersProducts from "../lastProduct/LastofOffersProducts";
 
 
 
@@ -17,7 +18,7 @@ const Home = () => {
       <HomeHeader />
  
      <MatgersHome />
-
+     <LastofOffersProducts/>
      <LazyLoad height={"500px"} once>
       <SlickSections Categories={Categories}/>
      </LazyLoad>

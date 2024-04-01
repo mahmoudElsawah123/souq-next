@@ -1,60 +1,5 @@
-import { baseUrl } from "../baseUrl"
-
-export async function mainCat() {
-    const res = await fetch(`${baseUrl}/rest/rest.category/getMainCategories`,{
-      method : 'POST',
-      body : JSON.stringify({"page" : 0}),
-      cache : 'no-store',
-      headers : {
-        "Access-Control-Allow-Headers" : "X-Custom-Header, Upgrade-Insecure-Requests",
-        'Content-Type': 'application/json',
-      } 
-  })
-  
-    // Recommendation: handle errors
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      return ""
-    }
-   
-    return res.json()
-  }
-
-
-  
-  export default async function sitemap(){
+ export default async function sitemap(){
     const baseLocalUrl = "https://souq-mahala.com"
-
-
-
-   const mainCats = await mainCat()
-   const catStock = []
-const filterData = ()=>{
-    if(mainCats){
-        mainCats.cats.forEach( function(childArray) {
-       childArray.products.forEach(function(item){
-         catStock.push(item)
-       });
-      });
-    }
-     }
-     filterData()
- 
- 
-     const mainCatsUrl = catStock.length > 0 ? catStock.map((item)=>{
-       return {
-         url : `${baseUrl}/product/${item.id}`,
-         lastModified : new Date()
-       }
-     }) : 'null';
-
- const mainCatsTwoUrl = mainCats? mainCats.cats.map((item)=>{
-     return {
-        url : `${baseLocalUrl}/category/${item.id}/${item.name.replace(/\s+/g, '-')}`,
-        lastModified : new Date()
-     }
-}) : []
-
 
       return [
         {
@@ -157,8 +102,6 @@ const filterData = ()=>{
             url: `${baseLocalUrl}/sign-up`,
             lastModified: new Date(),
           },
-                ...mainCatsUrl,
-                ...mainCatsTwoUrl,
 
       ]
   }

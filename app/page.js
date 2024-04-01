@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import Home from "./components/Home/Home";
 import Service from "./components/Service/Service";
-import LastofOffersProducts from "./components/lastProduct/LastofOffersProducts";
 import FooterBar from "./components/FooterBar/FooterBar";
 
 export default function App() {
@@ -24,25 +23,13 @@ export default function App() {
      }
    }, [Categories])
   return (
-   <>
-
-      {/* {Loading ? <div style={{backgroundColor : 'red' , height : '100vh'}}>loading</div>:
-        <>
-        <Home/>
-         <Service />
-        <LastofOffersProducts />
-         <FooterBar /> 
-        </>
-       } */}
-
        <>
         <Home/>
          <Service />
-        <LastofOffersProducts />
+        {/* <LastofOffersProducts /> */}
          <FooterBar /> 
         </>
 
 
-   </>
   )
 }
